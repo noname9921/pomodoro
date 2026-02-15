@@ -18,11 +18,11 @@ function renderTime(time: number): string {
 function getTimerInit(curr: Current): number {
   switch (curr) {
     case "work":
-      return 15;
+      return 1800;
     case "shortBreak":
-      return 5;
+      return 300;
     case "longBreak":
-      return 10;
+      return 900;
   }
 }
 
