@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "redeploy": "git add . && git commit -m \"update\" || echo no changes && git push && npm run deploy"
+    "redeploy": "git add . && git commit -m \"update\" && git push && npm run deploy"
+
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
