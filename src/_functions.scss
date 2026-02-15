@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+@function v($name) {
+  @return var($name)
+};
+
+@function add($arg1, $arg2) {
+  @return calc($arg1 + $arg2)
+}

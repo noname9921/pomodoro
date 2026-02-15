@@ -1,0 +1,101 @@
+
+// ====== COLORS ======
+
+// brand
+$primary: (
+  main: #7C3AED,
+  light: #925af3,
+  dark: #5617c2
+);
+
+// theme
+
+$light: (
+  bg: #ebebeb,
+  text: #151515,
+  text-muted: #2f2f2f
+);
+
+$dark: (
+  bg: #0e0e0e,
+  text: #eae9e9,
+  text-muted: #cac9c9
+);
+
+// semandtic
+
+$notice: (
+  danger: #ef4444,
+  warning: #f59e0b,
+  success: #22c55e
+);
+
+$task-opacity: (
+  normal: 1,
+  finished: .75
+);
+
+// ====== TYPOGRAPHY ======
+
+// font base
+$font-family-base: 'Poppins', system-ui;
+
+// font weight
+$font-weight: (
+  xlight: 300,
+  light: 400,
+  xslight: 450,
+  medium: 500,
+  xsbold: 600,
+  bold: 700,
+  xbold: 800
+);
+
+// font size
+$font-size: (
+  medium: 1rem,
+  small: .8rem,
+  xsmall: .65rem,
+  large: 1.25rem,
+  xlarge: 1.4rem
+);
+
+// ====== SPACING ======
+
+$spacing: (
+  base: 1rem,
+  small: .75rem, 
+  xsmall: .6rem,
+  large: 1.3rem,
+  xlarge: 1.5rem
+);
+
+// !! VAR GENERATION !!
+
+:root {
+  @each $key, $value in $light {
+    --#{$key}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $key, $value in $dark {
+      --#{$key}: #{$value};
+    }
+  }
+}
+
+// !! ACCESSING VARIABLES 
+
+@function gfs($size) {
+  @return map-get($map: $font-size, $key: $size)
+};
+
+@function gfw($weight) {
+  @return map-get($map: $font-weight, $key: $weight)
+};
+
+@function gs($size) {
+  @return map-get($map: $spacing, $key: $size)
+}

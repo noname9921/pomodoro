@@ -1,0 +1,65 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+.parent {
+  @include flexCenter;
+  align-items: center;
+  width: 100%;
+}
+
+.tasks {
+  width: 30rem;
+  background-color: map-get($map: $primary, $key: dark);
+  height: fit-content;
+  margin-top: gs(base);
+  padding: gs(xsmall);
+  padding-left: gs(small);
+  padding-right: gs(small);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s ease opacity;
+    margin-bottom: gs(xsmall)
+  }
+  button {
+    width: 2.25em !important;
+    height: 2.25em !important;
+    margin-bottom: 0;
+    font-size: .9em;
+    @include flexCenter;
+    align-items: center;
+  }
+  &:hover .buttons {
+    opacity: 1
+  }
+  h3 {
+    margin: 0;
+    margin-top: gs(xs);
+    font-size: 1.45em;
+    margin-bottom: .2rem;
+    font-weight: gfw(xbold);
+  }
+  p {
+    margin: 0;
+    font-size: 1em
+  }
+}
+
+.tasks[data-completed="true"] {
+  filter: grayscale(20%);
+  opacity: .75;
+  text-decoration: line-through;
+}
+
+@media(max-width: 720px) {
+  .buttons {
+    opacity: 1 !important;
+  }
+}
+

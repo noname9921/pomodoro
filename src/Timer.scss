@@ -1,0 +1,17 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+#timer {
+  width: 12rem;
+  height: fit-content;
+  align-items: center;
+  font-size: gfs(xlarge);
+  @include flexCenter;
+
+  h3 {
+    margin: 0;
+    margin-top: gs(xsmall);
+  }
+}
+

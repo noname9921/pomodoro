@@ -1,0 +1,51 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'functions' as *;
+
+@use 'timer' as *;
+@use 'dialog' as *;
+@use 'tasks' as *;
+
+* {
+  font-family: $font-family-base;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: add(gs(xlarge), .5rem);
+  background-color: v(--bg);
+  font-family: $font-family-base;
+  color: v(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+button {
+  margin-top: .5rem;
+  width: 7rem !important;
+  height: 2.75rem !important;
+  border-radius: 5rem;
+  color: var(--text);
+  background-color: map-get($map: $primary, $key: main);
+  box-shadow: none;
+  border: none;
+  font-family: $font-family-base;
+  font-weight: gfw(bold);
+}
+
+.center {
+  @include flexCenter;
+}
+
+svg {
+  color: v(--text) !important
+}
+
+#logo {
+  position: fixed;
+  top: 0.00000000001;
+  left: 0;
+  display: block;
+  width: 20rem;
+  margin: 1rem;
+}
